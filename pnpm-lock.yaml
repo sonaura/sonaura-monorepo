@@ -44,6 +44,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      google-libphonenumber:
+        specifier: ^3.2.40
+        version: 3.2.40
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.0.0)
@@ -75,6 +78,9 @@ importers:
       '@sonaura/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
+      '@types/google-libphonenumber':
+        specifier: ^7.4.30
+        version: 7.4.30
       '@types/node':
         specifier: ^20
         version: 20.17.19
@@ -1049,6 +1055,9 @@ packages:
   '@types/glob@7.2.0':
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
 
+  '@types/google-libphonenumber@7.4.30':
+    resolution: {integrity: sha512-Td1X1ayRxePEm6/jPHUBs2tT6TzW1lrVB6ZX7ViPGellyzO/0xMNi+wx5nH6jEitjznq276VGIqjK5qAju0XVw==}
+
   '@types/inquirer@6.5.0':
     resolution: {integrity: sha512-rjaYQ9b9y/VFGOpqBEXRavc3jh0a+e6evAbI31tMda8VlPaSy0AZJfXsvmIe3wklc7W6C3zCSfleuMXR7NOyXw==}
 
@@ -1719,6 +1728,10 @@ packages:
   globby@10.0.2:
     resolution: {integrity: sha512-7dUi7RvCoT/xast/o/dLN53oqND4yk0nsHkhRgn9w65C4PofCLOoJ39iSOg+qVDdWQPIEj+eszMHQ+aLVwwQSg==}
     engines: {node: '>=8'}
+
+  google-libphonenumber@3.2.40:
+    resolution: {integrity: sha512-bzGxX/vfggcV80LVcibki+JvR91x6zHpBpovDXSfmZUGn6uLzhbYXsWll2a80EG6qTmvf8lt7KZZ/pkMml8ckw==}
+    engines: {node: '>=0.10'}
 
   gopd@1.2.0:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
@@ -3729,6 +3742,8 @@ snapshots:
       '@types/minimatch': 5.1.2
       '@types/node': 20.17.19
 
+  '@types/google-libphonenumber@7.4.30': {}
+
   '@types/inquirer@6.5.0':
     dependencies:
       '@types/through': 0.0.33
@@ -4610,6 +4625,8 @@ snapshots:
       ignore: 5.3.2
       merge2: 1.4.1
       slash: 3.0.0
+
+  google-libphonenumber@3.2.40: {}
 
   gopd@1.2.0: {}
 
