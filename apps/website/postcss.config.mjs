@@ -1,0 +1,1 @@
+export { default } from "@sonaura/ui/postcss.config";
