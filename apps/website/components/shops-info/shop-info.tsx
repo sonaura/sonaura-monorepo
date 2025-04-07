@@ -1,4 +1,4 @@
-import { Shop } from '@sonaura/database/types/shops';
+import type { Shop } from '@sonaura/database/types';
 import { ShopItem } from './shop-item';
 
 export interface ShopInfoProps {

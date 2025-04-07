@@ -1,16 +1,15 @@
 'use client';
 
-import { Product } from '@/lib/supabase/products';
+import type { Product } from '@sonaura/database/types';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
+} from '@sonaura/ui/components/dialog';
 import { PropsWithChildren, useState } from 'react';
-import { ContactForm } from '@/components/marketing/contact-form';
+import { ContactForm } from '@/components/contact-form';
 
 export interface ProductFormProps {
   product: Product;

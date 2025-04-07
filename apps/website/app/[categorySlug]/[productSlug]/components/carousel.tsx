@@ -5,12 +5,13 @@ import {
   CarouselApi,
   CarouselContent,
   CarouselItem,
-} from '@/components/ui/carousel';
-import { Card, CardContent } from '@/components/ui/card';
-import { createClient } from '@/lib/supabase/client';
+} from '@sonaura/ui/components/carousel';
+import { Card, CardContent } from '@sonaura/ui/components/card';
+import { createClient } from '@sonaura/database/client';
+import type { Product } from '@sonaura/database/types';
+
 import Image from 'next/image';
-import { Product } from '@/lib/supabase/products';
-import { useVariantContext } from '@/app/(marketing)/[categorySlug]/[productSlug]/components/variant-provider';
+import { useVariantContext } from './variant-provider';
 import { useMemo, useState } from 'react';
 
 export interface ProductCarouselProps {
@@ -21,6 +22,8 @@ export const ProductCarousel = ({ product }: ProductCarouselProps) => {
   const [api, setApi] = useState<CarouselApi>();
   const { selectedVariants } = useVariantContext();
   const supabaseClient = createClient();
+
+  const id = product.id;
 
   const { images, hasVariantsShown } = useMemo(() => {
     const numberOfVariants = product.variants?.length || 0;

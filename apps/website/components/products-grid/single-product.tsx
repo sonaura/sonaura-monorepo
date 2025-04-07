@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Card, CardContent } from '@sonaura/ui/components/card';
 import Image from 'next/image';
 import { Price } from '@/components/price';
-import { Product } from '@sonaura/database/types/products';
+import type { Product } from '@sonaura/database/types';
 
 export interface SingleProductProps {
   product: Product;

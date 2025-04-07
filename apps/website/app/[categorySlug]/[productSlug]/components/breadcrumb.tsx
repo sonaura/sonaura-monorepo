@@ -6,8 +6,7 @@ import {
   BreadcrumbSeparator,
 } from '@sonaura/ui/components/breadcrumb';
 import Link from 'next/link';
-import { Product } from '@sonaura/database/types/products';
-import { Category } from '@sonaura/database/types/categories';
+import type { Product, Category } from '@sonaura/database/types';
 
 export interface ProductBreadcrumbProps {
   product: Product;

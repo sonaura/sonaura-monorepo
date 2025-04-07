@@ -19,7 +19,7 @@ import { Input } from '@sonaura/ui/components/input';
 import { Textarea } from '@sonaura/ui/components/textarea';
 import { RadioGroup, RadioGroupItem } from '@sonaura/ui/components/radio-group';
 import { CheckCircle } from 'lucide-react';
-import { Product } from '@sonaura/database/types/products';
+import type { Product } from '@sonaura/database/types';
 import { SendCustomerEmailInput } from '@/lib/email/dto/send-customer-email-input.dto';
 import { ApiUrl } from '@/routes/api';
 

@@ -1,25 +1,35 @@
 {
   "name": "@sonaura/database",
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.1.0",
   "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
-    "dev": "tsc --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.49.1",
+    "type-fest": "^4.39.1"
   },
   "devDependencies": {
     "@sonaura/eslint-config": "workspace:*",
     "@sonaura/typescript-config": "workspace:*",
-    "type-fest": "^4.39.1"
+    "@types/node": "^20.10.6",
+    "eslint": "^9.0.0",
+    "next": "^15.2.3"
   },
-  "dependencies": {
-    "next": "^15.2.3",
-    "@supabase/ssr": "^0.5.2",
-    "@supabase/supabase-js": "^2.49.1"
+  "peerDependencies": {
+    "next": ">=13.4.0"
   },
   "exports": {
-    "./server": "./lib/server.ts",
-    "./client": "./lib/client.ts",
-    "./types/*": "./lib/types/*.ts"
+    "./client": "./src/client.ts",
+    "./server": "./src/server.ts",
+    "./types": "./src/types/index.ts"
   }
 }

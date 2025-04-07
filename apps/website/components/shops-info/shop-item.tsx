@@ -1,4 +1,4 @@
-import { Shop } from '@sonaura/database/types/shops';
+import type { Shop } from '@sonaura/database/types';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { cloneElement, createElement, ReactElement, ReactNode } from 'react';
 
@@ -50,7 +50,7 @@ const ShopAttributeItem = ({
 }: {
   label: string;
   value: ReactNode;
-  icon: ReactElement;
+  icon: ReactElement<SVGElement>;
   href?: string;
 }) => {
   const iconElement = cloneElement(icon, {

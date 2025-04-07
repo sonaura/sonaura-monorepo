@@ -1,11 +1,11 @@
 'use client';
 
-import { Product } from '@/lib/supabase/products';
-import { Price } from '@/components/marketing/price';
-import { Button } from '@/components/ui/button';
+import type { Product } from '@sonaura/database/types';
+import { Price } from '@/components/price';
+import { Button } from '@sonaura/ui/components/button';
 import { useCart } from 'react-use-cart';
-import { ProductForm } from '@/app/(marketing)/[categorySlug]/[productSlug]/components/product-form';
-import { useVariantContext } from '@/app/(marketing)/[categorySlug]/[productSlug]/components/variant-provider';
+import { ProductForm } from './product-form';
+import { useVariantContext } from './variant-provider';
 import { useMemo } from 'react';
 
 export interface ProductDescriptionProps {

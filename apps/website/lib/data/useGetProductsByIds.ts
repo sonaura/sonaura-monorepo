@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { createClient } from '@sonaura/database/client';
+import type { Product } from '@sonaura/database/types';
 
 export interface UseGetProductsProps {
   ids: string[];
@@ -19,7 +20,7 @@ export const useGetProductsByIds = ({ ids }: UseGetProductsProps) => {
     return data;
   };
 
-  return useQuery({
+  return useQuery<Array<Product>>({
     queryFn: getProducts,
     queryKey: [],
   });

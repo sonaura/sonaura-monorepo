@@ -1,8 +1,8 @@
 'use client';
 
-import { Product } from '@/lib/supabase/products';
-import { Badge } from '@/components/ui/badge';
-import { useVariantContext } from '@/app/(marketing)/[categorySlug]/[productSlug]/components/variant-provider';
+import type { Product } from '@sonaura/database/types';
+import { Badge } from '@sonaura/ui/components/badge';
+import { useVariantContext } from './variant-provider';
 import { X } from 'lucide-react';
 
 const variantNameMapped: Record<string, string> = {

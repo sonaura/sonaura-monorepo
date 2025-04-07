@@ -1,6 +1,6 @@
 import { SingleProduct } from './single-product';
 import { ReactNode } from 'react';
-import { Product } from '@sonaura/database/types/products';
+import type { Product } from '@sonaura/database/types';
 
 export interface FeaturedProductsProps {
   id?: string;

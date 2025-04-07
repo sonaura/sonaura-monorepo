@@ -1,9 +1,8 @@
 'use client';
 
 import { useCart } from 'react-use-cart';
-import { Price } from '@/components/marketing/price';
-import { Button } from '@/components/ui/button';
-import { useRouter } from 'next/navigation';
+import { Price } from '@/components/price';
+import { Button } from '@sonaura/ui/components/button';
 
 export const OrderSummary = () => {
   const { cartTotal, isEmpty, totalItems } = useCart();

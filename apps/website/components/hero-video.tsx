@@ -110,7 +110,7 @@ export const HeroVideo = async ({
                             <a
                               href={
                                 notes[shop.city.toLocaleLowerCase()]
-                                  .googleMapsLink
+                                  ?.googleMapsLink
                               }
                               target={'_blank'}
                               className={
@@ -119,7 +119,10 @@ export const HeroVideo = async ({
                             >
                               {shop.city}
                               <ReviewStars
-                                note={notes[shop.city.toLocaleLowerCase()].note}
+                                note={
+                                  notes[shop.city.toLocaleLowerCase()]?.note ||
+                                  5
+                                }
                                 totalStars={5}
                                 className={
                                   'size-4 text-primary data-[fill=true]:fill-primary'
@@ -161,7 +164,7 @@ export const HeroVideo = async ({
                             <a
                               href={
                                 notes[shop.city.toLocaleLowerCase()]
-                                  .googleMapsLink
+                                  ?.googleMapsLink
                               }
                               target={'_blank'}
                               title={`${shop.address}, ${shop.postalCode} ${shop.city}`}
