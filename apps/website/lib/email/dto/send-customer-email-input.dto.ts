@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const sendEmailInputSchema = z.object({
+export const sendCustomerEmailInputSchema = z.object({
   firstName: z.string(),
   lastName: z.string(),
   email: z.string(),
@@ -14,4 +14,6 @@ export const sendEmailInputSchema = z.object({
   params: z.object({}).optional(),
 });
 
-export type SendCustomerEmailInput = z.infer<typeof sendEmailInputSchema>;
+export type SendCustomerEmailInput = z.infer<
+  typeof sendCustomerEmailInputSchema
+>;
