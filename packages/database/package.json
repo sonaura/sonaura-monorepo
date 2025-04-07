@@ -1,0 +1,25 @@
+{
+  "name": "@sonaura/database",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@sonaura/eslint-config": "workspace:*",
+    "@sonaura/typescript-config": "workspace:*",
+    "type-fest": "^4.39.1"
+  },
+  "dependencies": {
+    "next": "^15.2.3",
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.49.1"
+  },
+  "exports": {
+    "./server": "./lib/server.ts",
+    "./client": "./lib/client.ts",
+    "./types/*": "./lib/types/*.ts"
+  }
+}

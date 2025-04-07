@@ -1,30 +1,46 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import { Montserrat } from 'next/font/google';
 
-import "@sonaura/ui/globals.css"
-import { Providers } from "@/components/providers"
+import '@sonaura/ui/globals.css';
+import { Providers } from '@/components/providers';
+import { ReactNode } from 'react';
+import { Metadata } from 'next';
+import { CartSidebar } from '@/components/cart-sidebar';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
+import { BreakpointsHelper } from '@/components/breakpoint-helper';
+import { Analytics } from '@/components/analytics';
 
-const fontSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Sonaura',
+    default: 'Distributeur Bang & Olufsen Auvergne Rhône-Alpes | Sonaura',
+  },
+};
 
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+const montserrat = Montserrat({
+  subsets: ['latin'],
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
+        className={`${montserrat.className} antialiased min-h-screen text-balance`}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          <CartSidebar>
+            <Header />
+            {children}
+            <Footer />
+            <BreakpointsHelper />
+            <Analytics />
+          </CartSidebar>
+        </Providers>
       </body>
     </html>
-  )
+  );
 }
