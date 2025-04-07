@@ -1,3 +1,5 @@
+import './env/env-helper.mjs';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: ['@sonaura/ui'],

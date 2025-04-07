@@ -1,13 +1,12 @@
 import { GoogleTagManager } from '@next/third-parties/google';
+import { env } from '@/env';
 
 export const Analytics = () => {
-  const env = process.env.NODE_ENV;
-  const isDev = env === 'development';
-  const gtmId = process.env.GOOGLE_TAG_MANAGER_ID;
+  const { isDev, GOOGLE_TAG_MANAGER_ID } = env;
 
-  if (isDev || !gtmId) {
+  if (isDev || !GOOGLE_TAG_MANAGER_ID) {
     return null;
   }
 
-  return <GoogleTagManager gtmId={gtmId} />;
+  return <GoogleTagManager gtmId={GOOGLE_TAG_MANAGER_ID} />;
 };

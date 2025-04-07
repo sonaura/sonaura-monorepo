@@ -5,10 +5,12 @@ import { AddToListInput } from '@/lib/email/dto/add-to-list-input.dto';
 import { formatPhoneNumber } from '@/utils/phone-number';
 import { SendMerchantEmailInput } from '@/lib/email/dto/send-merchant-email-input.dto';
 import { SendCustomerEmailInput } from '@/lib/email/dto/send-customer-email-input.dto';
+import { env } from '@/env';
 
 const baseUrl = 'https://api.brevo.com/v3';
-const merchantEmail = process.env.NEXT_PUBLIC_MERCHANT_EMAIL!;
-const merchantName = process.env.NEXT_PUBLIC_MERCHANT_NAME!;
+const { NEXT_PUBLIC_MERCHANT_NAME, NEXT_PUBLIC_MERCHANT_EMAIL } = env;
+const merchantEmail = NEXT_PUBLIC_MERCHANT_EMAIL;
+const merchantName = NEXT_PUBLIC_MERCHANT_NAME;
 
 export function subscribeToNewsletter(
   subscribeNewsletterDto: SubscribeNewsletterDto,

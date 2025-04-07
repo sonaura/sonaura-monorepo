@@ -1,7 +1,7 @@
-export const BreakpointsHelper = () => {
-  const env = process.env.NODE_ENV;
+import { env } from '@/env';
 
-  const isDev = env === 'development';
+export const BreakpointsHelper = () => {
+  const { isDev } = env;
 
   if (!isDev) {
     return null;
