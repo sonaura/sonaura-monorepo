@@ -23,8 +23,6 @@ export const ProductCarousel = ({ product }: ProductCarouselProps) => {
   const { selectedVariants } = useVariantContext();
   const supabaseClient = createClient();
 
-  const id = product.id;
-
   const { images, hasVariantsShown } = useMemo(() => {
     const numberOfVariants = product.variants?.length || 0;
 
