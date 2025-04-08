@@ -33,7 +33,7 @@
     "@sonaura/eslint-config": "workspace:^",
     "@sonaura/typescript-config": "workspace:*",
     "@types/google-libphonenumber": "^7.4.30",
-    "@types/node": "^20",
+    "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19"
   }
