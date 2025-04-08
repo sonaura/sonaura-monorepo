@@ -26,7 +26,7 @@ const Login: React.FC = () => {
       await supabaseClient.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: `${websiteUrl}/dashboard`,
+          emailRedirectTo: `${websiteUrl}`,
         },
       });
       setEmailSent(true);

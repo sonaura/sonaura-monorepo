@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 
@@ -8,6 +8,7 @@ import Link from '@mui/material/Link';
 import { useRouter } from 'next/router';
 import Login from 'components/dashboard/Login';
 import { createClient } from '@sonaura/database/client';
+import { User } from '@supabase/supabase-js';
 
 interface Props {
   children: React.ReactNode;
@@ -16,15 +17,24 @@ interface Props {
 
 const DashboardMain: React.FC<Props> = ({ children }) => {
   const router = useRouter();
+  const [user, setUser] = useState<User | null>(null);
   const supabaseClient = createClient();
 
-  const session = supabaseClient.auth.getSession();
+  useEffect(() => {
+    const getUser = async () => {
+      const { data } = await supabaseClient.auth.getUser();
+      if (data) {
+        setUser(data.user);
+      }
+    };
+    getUser();
+  }, []);
 
   const signOut = () => {
     supabaseClient.auth.signOut();
   };
 
-  if (!session) {
+  if (!user) {
     return <Login />;
   }
 
