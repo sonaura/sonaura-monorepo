@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FormEvent, useState } from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -10,7 +12,7 @@ import { Alert } from '@mui/material';
 import { isEmail } from 'class-validator';
 import { createClient } from '@sonaura/database/client';
 
-const Login: React.FC = () => {
+export const Login = () => {
   const [email, setEmail] = useState<string>('');
   const [emailSent, setEmailSent] = useState<boolean>(false);
   const supabaseClient = createClient();
@@ -26,7 +28,7 @@ const Login: React.FC = () => {
       await supabaseClient.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: `${websiteUrl}`,
+          emailRedirectTo: `${websiteUrl}/auth/callback`,
         },
       });
       setEmailSent(true);
@@ -92,5 +94,3 @@ const Login: React.FC = () => {
     </Box>
   );
 };
-
-export default Login;

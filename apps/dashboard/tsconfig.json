@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./*"],
       "@sonaura/ui/*": ["../../packages/ui/src/*"]
     },
     "plugins": [

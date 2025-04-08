@@ -1,7 +1,7 @@
 import { DataGrid } from '@mui/x-data-grid/DataGrid';
 import { GridColDef } from '@mui/x-data-grid/models/colDef';
 import LoadingScreen from 'components/system/LoadingScreen';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import type { Category, Product, Shop } from '@sonaura/database/types';
 import { createClient } from '@sonaura/database/client';

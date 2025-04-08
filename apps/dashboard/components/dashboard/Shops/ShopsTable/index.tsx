@@ -1,7 +1,9 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid/DataGrid';
 import { GridColDef } from '@mui/x-data-grid/models/colDef';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import LoadingScreen from 'components/system/LoadingScreen';
 import { Shop } from '@sonaura/database/types';
 import { createClient } from '@sonaura/database/client';
