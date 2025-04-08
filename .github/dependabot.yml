@@ -5,7 +5,12 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
-    versioning-strategy: "auto"
+    # Changed to lockfile-only to ensure proper lockfile updates
+    versioning-strategy: "lockfile-only"
+    # Added commit message configuration
+    commit-message:
+      prefix: "chore"
+      include: "scope"
     groups:
       minor-and-patch:
         patterns:

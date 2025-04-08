@@ -1,0 +1,32 @@
+name: Dependabot Fix Lockfile
+
+on:
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.x.x # Adjust to match your pnpm version
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Adjust to match your Node.js version
+          cache: 'pnpm'
+
+      - name: Update lockfile
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Commit updated lockfile
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: update pnpm-lock.yaml for dependabot PR"
+          file_pattern: 'pnpm-lock.yaml'
