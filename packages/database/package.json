@@ -9,13 +9,14 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch"
+    "build": "npx tsc",
+    "dev": "npx tsc --watch"
   },
   "dependencies": {
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.1",
-    "type-fest": "^4.39.1"
+    "type-fest": "^4.39.1",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@sonaura/eslint-config": "workspace:*",
@@ -28,9 +29,22 @@
     "next": ">=13.4.0"
   },
   "exports": {
-    "./client": "./src/client.ts",
-    "./server": "./src/server.ts",
-    "./middleware": "./src/middleware.ts",
+    "./client": {
+      "import": "./dist/client.js",
+      "types": "./dist/client.d.ts"
+    },
+    "./server": {
+      "import": "./dist/server.js",
+      "types": "./dist/server.d.ts"
+    },
+    "./middleware": {
+      "import": "./dist/middleware.js",
+      "types": "./dist/middleware.d.ts"
+    },
+    "./required-env": {
+      "import": "./dist/required-env.js",
+      "types": "./dist/required-env.d.ts"
+    },
     "./types": "./src/types/index.ts"
   }
 }
