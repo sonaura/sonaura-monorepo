@@ -1,9 +1,6 @@
-import { getCustomRequiredEnv } from '@sonaura/database/required-env';
-import { baseEnvSchema } from './base-env-schema';
+import { getWebsiteEnv } from '@sonaura/env-checker';
 
-export const envSchema = getCustomRequiredEnv(baseEnvSchema);
-
-export const parsedEnv = envSchema.parse(process.env);
+const parsedEnv = getWebsiteEnv(process.env);
 
 export const env = {
   ...parsedEnv,

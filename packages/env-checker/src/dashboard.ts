@@ -1,13 +1,12 @@
 import { z } from 'zod';
+import { getCustomRequiredEnv } from './utils/getCustomRequiredEnv';
 
-export const baseEnvSchema = z.object({
+const baseEnvSchema = z.object({
   // Required variables
   NEXT_PUBLIC_SITE_ENV: z.string().min(1),
+  NODE_ENV: z.string().min(1),
 
   // Optional variables
-  NODE_ENV: z
-    .enum(['development', 'production', 'test'])
-    .default('development'),
   NEXT_PUBLIC_WEBSITE_URL: z
     .string()
     .optional()
@@ -17,3 +16,8 @@ export const baseEnvSchema = z.object({
     .optional()
     .transform((val) => val || undefined),
 });
+
+const getDashboardEnvSchema = () => getCustomRequiredEnv(baseEnvSchema);
+
+export const getDashboardEnv = (env: unknown) =>
+  getDashboardEnvSchema().parse(env);

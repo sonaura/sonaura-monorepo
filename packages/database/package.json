@@ -45,11 +45,6 @@
       "require": "./dist/middleware.js",
       "types": "./dist/middleware.d.ts"
     },
-    "./required-env": {
-      "import": "./dist/required-env.mjs",
-      "require": "./dist/required-env.js",
-      "types": "./dist/required-env.d.ts"
-    },
     "./types": {
       "import": "./dist/types/index.mjs",
       "require": "./dist/types/index.js",
