@@ -1,9 +1,5 @@
 import { withSentryConfig } from '@sentry/nextjs';
 
-import { getWebsiteEnv } from '@sonaura/env-checker';
-
-getWebsiteEnv(process.env);
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: ['@sonaura/ui'],
