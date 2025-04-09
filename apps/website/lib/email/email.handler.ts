@@ -144,6 +144,16 @@ export async function sendCustomerEmail(
     );
   }
 
+  await sendMerchantEmail({
+    email,
+    message,
+    templateId: templateId.merchant,
+    firstName,
+    lastName,
+    phone,
+    params,
+  });
+
   return fetch(url, {
     method: 'POST',
     body: JSON.stringify(paylaod),
