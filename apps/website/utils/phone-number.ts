@@ -8,9 +8,6 @@ const getInstance = (phoneNumber: string) => {
   };
 };
 
-/**
- * Format a phone number into ISO E164 spec
- */
 export const formatPhoneNumber = (phoneNumber: string): string => {
   const { instance, number } = getInstance(phoneNumber);
 
