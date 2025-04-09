@@ -1,5 +1,4 @@
 import { z } from 'zod';
-import { requiredDatabaseEnv } from '@sonaura/database/required-env';
 
 export const baseEnvSchema = z.object({
   // Required variables
@@ -15,14 +14,16 @@ export const baseEnvSchema = z.object({
   NODE_ENV: z
     .enum(['development', 'production', 'test'])
     .default('development'),
-  GOOGLE_TAG_MANAGER_ID: z.string().optional(),
-  NEXT_PUBLIC_WEBSITE_URL: z.string().optional(),
-  NEXT_PUBLIC_VERCEL_URL: z.string().optional(),
+  GOOGLE_TAG_MANAGER_ID: z
+    .string()
+    .optional()
+    .transform((val) => val || undefined),
+  NEXT_PUBLIC_WEBSITE_URL: z
+    .string()
+    .optional()
+    .transform((val) => val || undefined),
+  NEXT_PUBLIC_VERCEL_URL: z
+    .string()
+    .optional()
+    .transform((val) => val || undefined),
 });
-
-export const envSchema = z.object({
-  ...baseEnvSchema.shape,
-  ...requiredDatabaseEnv.shape,
-});
-
-export const parsedEnv = envSchema.parse(process.env);
