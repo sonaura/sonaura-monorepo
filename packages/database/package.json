@@ -9,8 +9,8 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "npx tsc",
-    "dev": "npx tsc --watch"
+    "build": "tsup",
+    "dev": "tsup --watch"
   },
   "dependencies": {
     "@supabase/ssr": "^0.6.1",
@@ -23,28 +23,38 @@
     "@sonaura/typescript-config": "workspace:*",
     "@types/node": "^20.10.6",
     "eslint": "^9.24.0",
-    "next": "^15.2.4"
+    "next": "^15.2.4",
+    "tsup": "^8.4.0"
   },
   "peerDependencies": {
     "next": ">=13.4.0"
   },
   "exports": {
     "./client": {
-      "import": "./dist/client.js",
+      "import": "./dist/client.mjs",
+      "require": "./dist/client.js",
       "types": "./dist/client.d.ts"
     },
     "./server": {
-      "import": "./dist/server.js",
+      "import": "./dist/server.mjs",
+      "require": "./dist/server.js",
       "types": "./dist/server.d.ts"
     },
     "./middleware": {
-      "import": "./dist/middleware.js",
+      "import": "./dist/middleware.mjs",
+      "require": "./dist/middleware.js",
       "types": "./dist/middleware.d.ts"
     },
     "./required-env": {
-      "import": "./dist/required-env.js",
+      "import": "./dist/required-env.mjs",
+      "require": "./dist/required-env.js",
       "types": "./dist/required-env.d.ts"
     },
-    "./types": "./src/types/index.ts"
+    "./types": {
+      "import": "./dist/types/index.mjs",
+      "require": "./dist/types/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
   }
+
 }
