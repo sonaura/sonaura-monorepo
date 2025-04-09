@@ -1,7 +1,4 @@
 import { withSentryConfig } from '@sentry/nextjs';
-import { getDashboardEnv } from '@sonaura/env-checker';
-
-getDashboardEnv(process.env);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
