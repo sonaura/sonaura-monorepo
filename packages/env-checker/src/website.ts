@@ -1,6 +1,7 @@
 import { z } from 'zod';
+import { getCustomRequiredEnv } from './utils/getCustomRequiredEnv';
 
-export const baseEnvSchema = z.object({
+const baseEnvSchema = z.object({
   // Required variables
   NEXT_PUBLIC_SITE_ENV: z.string().min(1),
 
@@ -9,11 +10,9 @@ export const baseEnvSchema = z.object({
 
   NEXT_PUBLIC_SIB_API_KEY: z.string().min(1),
   NEXT_PUBLIC_PAYPLUG_SECRET_KEY: z.string().min(1),
+  NODE_ENV: z.string().min(1),
 
   // Optional variables
-  NODE_ENV: z
-    .enum(['development', 'production', 'test'])
-    .default('development'),
   GOOGLE_TAG_MANAGER_ID: z
     .string()
     .optional()
@@ -27,3 +26,7 @@ export const baseEnvSchema = z.object({
     .optional()
     .transform((val) => val || undefined),
 });
+
+const getWebsiteEnvSchema = () => getCustomRequiredEnv(baseEnvSchema);
+
+export const getWebsiteEnv = (env: unknown) => getWebsiteEnvSchema().parse(env);

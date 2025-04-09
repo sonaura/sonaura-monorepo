@@ -1,9 +1,10 @@
 import { withSentryConfig } from '@sentry/nextjs';
-import { NextConfig } from 'next';
+import { getDashboardEnv } from '@sonaura/env-checker';
 
-import './env/env-helper';
+getDashboardEnv(process.env);
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   transpilePackages: ['@sonaura/ui'],
   reactStrictMode: true,
   images: {
@@ -24,7 +25,7 @@ export default withSentryConfig(nextConfig, {
   // https://www.npmjs.com/package/@sentry/webpack-plugin#options
 
   org: 'sonaura',
-  project: 'website',
+  project: 'dashboard',
 
   // Only print logs for uploading source maps in CI
   silent: !process.env.CI,
