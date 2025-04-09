@@ -7,10 +7,10 @@ import TextField, { OutlinedTextFieldProps } from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Container from 'components/system/Container';
-import { websiteUrl } from 'appConstants';
 import { Alert } from '@mui/material';
 import { isEmail } from 'class-validator';
 import { createClient } from '@sonaura/database/client';
+import { getWebsiteDomain } from '@/utils/website-domain';
 
 export const Login = () => {
   const [email, setEmail] = useState<string>('');
@@ -28,7 +28,7 @@ export const Login = () => {
       await supabaseClient.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: `${websiteUrl}/auth/callback`,
+          emailRedirectTo: `${getWebsiteDomain()}/auth/callback`,
         },
       });
       setEmailSent(true);
