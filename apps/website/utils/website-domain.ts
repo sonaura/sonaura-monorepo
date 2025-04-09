@@ -9,5 +9,5 @@ export function getWebsiteDomain() {
 
   return `${NEXT_PUBLIC_SITE_ENV === 'local' ? 'http' : 'https'}://${
     NEXT_PUBLIC_WEBSITE_URL || NEXT_PUBLIC_VERCEL_URL
-  }`;
+  }/`;
 }
