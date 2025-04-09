@@ -123,9 +123,6 @@ importers:
       '@sonaura/database':
         specifier: workspace:*
         version: link:../../packages/database
-      '@sonaura/env-checker':
-        specifier: workspace:*
-        version: link:../../packages/env-checker
       '@sonaura/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -212,28 +209,6 @@ importers:
       next:
         specifier: ^15.2.4
         version: 15.2.4(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      tsup:
-        specifier: ^8.4.0
-        version: 8.4.0(jiti@2.4.2)(postcss@8.5.3)(typescript@5.8.3)
-
-  packages/env-checker:
-    dependencies:
-      zod:
-        specifier: ^3.24.2
-        version: 3.24.2
-    devDependencies:
-      '@sonaura/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@sonaura/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      '@types/node':
-        specifier: ^20.10.6
-        version: 20.17.30
-      eslint:
-        specifier: ^9.24.0
-        version: 9.24.0(jiti@2.4.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(jiti@2.4.2)(postcss@8.5.3)(typescript@5.8.3)

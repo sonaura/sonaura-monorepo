@@ -14,7 +14,6 @@
   "dependencies": {
     "@sonaura/database": "workspace:*",
     "@sonaura/ui": "workspace:*",
-    "@sonaura/env-checker": "workspace:*",
     "@hookform/resolvers": "^5.0.1",
     "@next/third-parties": "^15.2.4",
     "@sentry/nextjs": "^9.12.0",
