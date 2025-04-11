@@ -97,7 +97,7 @@ export const ContactForm = ({
 
     if (response.ok) {
       form.reset();
-      sendGTMEvent('contact_form_submitted');
+      sendGTMEvent({ event: 'contact_form_submitted' });
       onSubmitSuccessful?.();
     }
   }
