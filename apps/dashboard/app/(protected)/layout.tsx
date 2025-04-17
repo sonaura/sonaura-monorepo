@@ -2,26 +2,56 @@ import React, { ReactNode } from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import '@sonaura/ui/styles/globals.css';
-import { createClient } from '@sonaura/database/server';
-import { redirect } from 'next/navigation';
-import { DashboardMain } from '@/layouts/DashboardMain';
+import { auth, login } from '@/auth';
+import { Header } from '@/components/header';
+import { LogoutButton } from '@/components/logout-button';
+import Box from '@mui/material/Box';
+import { rolesEnum } from '@sonaura/database/schema';
+import Typography from '@mui/material/Typography';
+
+type UserRole = (typeof rolesEnum.enumValues)[number];
+
+const allowedRoles: Array<UserRole> = ['admin', 'editor'];
 
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
-  const supabaseClient = await createClient();
+  const subject = await auth();
 
-  const { data } = await supabaseClient.auth.getUser();
+  if (subject === false) {
+    return await login();
+  }
 
-  if (!data.user) {
-    return redirect('/login');
+  console.log('subject', subject);
+
+  if (!allowedRoles.includes(subject.properties.role as UserRole)) {
+    return (
+      <Box
+        display={'flex'}
+        flexDirection={'column'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        width={'100%'}
+        height={'100vh'}
+      >
+        <Typography variant={'h4'}>Vous n'êtes pas autorisé.</Typography>
+        <LogoutButton />
+      </Box>
+    );
   }
 
   return (
     <>
-      <DashboardMain>{children}</DashboardMain>
+      <Box>
+        <Header>
+          <LogoutButton />
+        </Header>
+        <Box component={'main'} margin={'2rem'}>
+          {children}
+        </Box>
+      </Box>
       <Toaster position="top-center" toastOptions={{ duration: 5000 }} />
     </>
   );

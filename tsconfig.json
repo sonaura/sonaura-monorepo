@@ -1,4 +1,7 @@
 {
+  "compilerOptions": {
+      "jsx": "react"
+  },
   "extends": "@sonaura/typescript-config/base.json"
 }
 

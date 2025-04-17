@@ -1,7 +1,7 @@
 {
-  "extends": "@sonaura/typescript-config/base.json",
+  "extends": "@sonaura/typescript-config/react-library.json",
   "compilerOptions": {
-    "moduleResolution": "node"
+    "baseUrl": ".",
   },
   "include": ["."],
   "exclude": ["node_modules", "dist"]

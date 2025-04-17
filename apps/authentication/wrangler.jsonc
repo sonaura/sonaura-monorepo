@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "authentication",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-04-16",
+  "compatibility_flags": ["nodejs_compat"],
+  "kv_namespaces": [
+    {
+      "binding": "AUTH_KV",
+      "id": "ec7740e64f864f30a95e23faf4146dd8"
+    }
+  ],
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "auth.sonaura.fr",
+      "custom_domain": true
+    }
+  ]
+}
