@@ -1,0 +1,24 @@
+{
+  "extends": "@sonaura/typescript-config/base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@sonaura/ui/*": ["../../packages/ui/src/*"],
+      "@sonaura/database/*": ["../../packages/database/src/*"],
+      "@sonaura/transactional/*": ["../../packages/transactional/emails/*"]
+    },
+    "lib": [
+      "ESNext"
+    ],
+    "types": [
+      "@cloudflare/workers-types/2023-07-01"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  },
+}

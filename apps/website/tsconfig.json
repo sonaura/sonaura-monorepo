@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@sonaura/ui/*": ["../../packages/ui/src/*"]
+      "@sonaura/ui/*": ["../../packages/ui/src/*"],
+      "@sonaura/database/*": ["../../packages/database/src/*"]
     },
     "plugins": [
       {

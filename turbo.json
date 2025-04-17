@@ -16,6 +16,22 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "db:generate": {
+      "cache": false,
+      "persistent": false
+    },
+    "db:migrate": {
+      "cache": false,
+      "persistent": false
+    },
+    "cf-typegen": {
+      "cache": false,
+      "persistent": false
+    },
+    "deploy": {
+      "cache": false,
+      "persistent": false
     }
   }
 }

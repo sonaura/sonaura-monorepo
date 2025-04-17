@@ -1,0 +1,27 @@
+{
+  "name": "authentication",
+  "version": "0.0.1",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings env.d.ts"
+  },
+  "dependencies": {
+    "@sonaura/auth": "workspace:*",
+    "@sonaura/database": "workspace:*",
+    "@sonaura/transactional": "workspace:*",
+    "hono": "^4.7.7",
+    "@openauthjs/openauth": "^0.4.3",
+    "drizzle-orm": "^0.42.0",
+    "@neondatabase/serverless": "^1.0.0",
+    "resend": "^4.3.0",
+    "react": "^19.1.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250214.0",
+    "wrangler": "^4.4.0",
+    "@types/react": "^19.1.2"
+  }
+}

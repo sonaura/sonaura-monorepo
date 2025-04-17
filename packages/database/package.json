@@ -1,55 +1,30 @@
 {
   "name": "@sonaura/database",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**"
-  ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch"
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx ./src/migrate.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.1",
     "type-fest": "^4.39.1",
-    "zod": "^3.24.2"
+    "drizzle-orm": "^0.42.0",
+    "dotenv": "^16.5.0",
+    "@neondatabase/serverless": "^1.0.0"
   },
   "devDependencies": {
     "@sonaura/eslint-config": "workspace:*",
     "@sonaura/typescript-config": "workspace:*",
     "@types/node": "^20.10.6",
     "eslint": "^9.24.0",
-    "next": "^15.3.0",
-    "tsup": "^8.4.0"
+    "drizzle-kit": "^0.31.0",
+    "tsx": "^4.19.2",
+    "next": "^15.3.0"
   },
   "peerDependencies": {
     "next": ">=13.4.0"
-  },
-  "exports": {
-    "./client": {
-      "import": "./dist/client.mjs",
-      "require": "./dist/client.js",
-      "types": "./dist/client.d.ts"
-    },
-    "./server": {
-      "import": "./dist/server.mjs",
-      "require": "./dist/server.js",
-      "types": "./dist/server.d.ts"
-    },
-    "./middleware": {
-      "import": "./dist/middleware.mjs",
-      "require": "./dist/middleware.js",
-      "types": "./dist/middleware.d.ts"
-    },
-    "./types": {
-      "import": "./dist/types/index.mjs",
-      "require": "./dist/types/index.js",
-      "types": "./dist/types/index.d.ts"
-    }
   }
-
 }
