@@ -13,14 +13,14 @@
     "dev": "tsup --watch"
   },
   "dependencies": {
-    "@openauthjs/openauth": "^0.4.3",
-    "valibot": "^1.0.0"
+    "@openauthjs/openauth": "0.4.3",
+    "valibot": "1.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20.10.6",
-    "eslint": "^9.24.0",
-    "tsup": "^8.4.0",
-    "hono": "^4.7.7"
+    "@types/node": "20.10.6",
+    "eslint": "9.24.0",
+    "tsup": "8.4.0",
+    "hono": "4.7.7"
   },
   "peerDependencies": {
     "hono": ">=4.7.7"
