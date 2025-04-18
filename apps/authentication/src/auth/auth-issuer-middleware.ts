@@ -13,7 +13,10 @@ type AllowIssuer = (
   req: Request,
 ) => Promise<boolean>;
 
-const authorizedRedirectURI = ['sonaura.fr', 'dashboard-*-sonaura.vercel.app'];
+const authorizedRedirectURI = [
+  'dashboard.sonaura.fr',
+  'dashboard-*-sonaura.vercel.app',
+];
 const authorizedClient = ['sonaura-dashboard'];
 
 export const authIssuerMiddleware: MiddlewareHandler<AppType> = async (c) => {
