@@ -16,3 +16,9 @@ updates:
         update-types:
           - "minor"
           - "patch"
+      major-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "major"
+        open-pull-requests-limit: 5
