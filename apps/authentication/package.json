@@ -16,7 +16,7 @@
     "@openauthjs/openauth": "0.4.3",
     "drizzle-orm": "0.42.0",
     "@neondatabase/serverless": "1.0.0",
-    "resend": "4.3.0",
+    "resend": "4.4.0",
     "react": "19.1.0"
   },
   "devDependencies": {
