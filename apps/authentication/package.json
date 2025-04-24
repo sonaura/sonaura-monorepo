@@ -16,11 +16,11 @@
     "@openauthjs/openauth": "0.4.3",
     "drizzle-orm": "0.42.0",
     "@neondatabase/serverless": "1.0.0",
-    "resend": "4.3.0",
+    "resend": "4.4.1",
     "react": "19.1.0"
   },
   "devDependencies": {
-    "wrangler": "4.12.0",
+    "wrangler": "4.13.0",
     "@types/react": "19.1.2",
     "@types/node": "22.14.1"
   }
