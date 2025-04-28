@@ -1,31 +1,20 @@
-# shadcn/ui monorepo template
+# Sonaura
+## `/apps`
+- authentication (`@openauthjs`): self-hosted authentication
+  - hosted on Cloudflare Workers
+- website (`Next.js`): main website using
+  - using `tailwindcss`
+  - hosted on Vercel (migrating to Cloudflare Workers)
+- dashboard (`Next.js`): to update website information like shops, categories, products and variants
+  - using `@mui` and migrating to `tailwindcss` 
+  - hosted on Vercel (migrating to Cloudflare Workers)
 
-This template is for creating a monorepo with shadcn/ui.
-
-## Usage
-
-```bash
-pnpm dlx shadcn@latest init
-```
-
-## Adding components
-
-To add components to your app, run the following command at the root of your `web` app:
-
-```bash
-pnpm dlx shadcn@latest add button -c apps/web
-```
-
-This will place the ui components in the `packages/ui/src/components` directory.
-
-## Tailwind
-
-Your `tailwind.config.ts` and `globals.css` are already set up to use the components from the `ui` package.
-
-## Using components
-
-To use the components in your app, import them from the `ui` package.
-
-```tsx
-import { Button } from "@sonaura/ui/components/button"
-```
+## `/packages`
+- auth (`@openauthjs`): authentication helper to share between apps
+- database: 
+  - currently Supabase + `@supabase/supabase-js`
+  - migrating to `drizzle` + `@neondatabase`
+- eslint-config: base config to be shared across all apps and packages
+- transactional: using `react-email` to create and preview emails
+- typescript-config: base config to be shared across all apps and packages
+- ui: Design System primitives based on `shadcn/ui` components and using `tailwindcss`
