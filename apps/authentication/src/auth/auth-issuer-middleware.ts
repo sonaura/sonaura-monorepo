@@ -15,6 +15,7 @@ type AllowIssuer = (
 
 const authorizedRedirectURI = [
   'dashboard.sonaura.fr',
+  'beta.sonaura.fr',
   'dashboard-*-sonaura.vercel.app',
 ];
 const authorizedClient = ['sonaura-dashboard'];
