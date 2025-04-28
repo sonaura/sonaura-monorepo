@@ -2,32 +2,12 @@
   "name": "@sonaura/auth",
   "version": "0.1.0",
   "private": true,
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**"
-  ],
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch"
-  },
   "dependencies": {
     "@openauthjs/openauth": "0.4.3",
     "valibot": "1.0.0"
   },
   "devDependencies": {
     "@types/node": "22.14.1",
-    "eslint": "9.24.0",
-    "tsup": "8.4.0",
-    "hono": "4.7.7"
-  },
-  "peerDependencies": {
-    "hono": ">=4.7.7"
-  },
-  "exports": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+    "eslint": "9.24.0"
   }
 }

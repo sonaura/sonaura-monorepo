@@ -5,7 +5,8 @@
     "paths": {
       "@/*": ["./*"],
       "@sonaura/ui/*": ["../../packages/ui/src/*"],
-      "@sonaura/database/*": ["../../packages/database/src/*"]
+      "@sonaura/database/*": ["../../packages/database/src/*"],
+      "@sonaura/auth": ["../../packages/auth/src/index.ts"]
     },
     "plugins": [
       {
