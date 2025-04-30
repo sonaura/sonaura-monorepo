@@ -23,10 +23,10 @@ export const DashboardNewProductView = () => {
 
     if (error) {
       console.log(error);
-      toast.error('products.add.error');
+      toast.error("Erreur lors de l'ajout du produit");
       return;
     }
-    toast.success('products.add.success');
+    toast.success('Produit ajouté');
     router.push('/products');
   };
 

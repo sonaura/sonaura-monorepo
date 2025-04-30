@@ -57,10 +57,10 @@ export const DashboardEditProductView = ({
 
     if (error) {
       console.log(error);
-      toast.error('Produit ajouté');
+      toast.error('Erreur lors de la mise à jour du produit.');
       return;
     }
-    toast.success("Erreur lors de l'ajout du produit");
+    toast.success('Produit mis à jour');
     router.push('/products');
   };
 
