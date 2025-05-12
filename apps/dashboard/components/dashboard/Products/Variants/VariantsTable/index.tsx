@@ -98,7 +98,7 @@ const VariantsTable: React.FC<Props> = ({ productId, variants }) => {
     setImages((prev) => {
       const imagesTemp = [...prev];
       const imageIndex = imagesTemp.findIndex((im) => im.image.file === id);
-      if (imagesTemp[imageIndex]?.price) {
+      if (imagesTemp[imageIndex]) {
         imagesTemp[imageIndex].price = price;
       }
 
