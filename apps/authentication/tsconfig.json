@@ -10,7 +10,8 @@
       "@/*": ["./src/*"],
       "@sonaura/ui/*": ["../../packages/ui/src/*"],
       "@sonaura/database/*": ["../../packages/database/src/*"],
-      "@sonaura/transactional/*": ["../../packages/transactional/emails/*"]
+      "@sonaura/transactional/*": ["../../packages/transactional/emails/*"],
+      "@sonaura/auth": ["../../packages/auth/src/index.ts"]
     },
     "lib": [
       "ESNext"
