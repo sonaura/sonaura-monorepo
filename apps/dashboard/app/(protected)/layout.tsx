@@ -24,8 +24,6 @@ export default async function RootLayout({
     return await login();
   }
 
-  console.log('subject', subject);
-
   if (!allowedRoles.includes(subject.properties.role as UserRole)) {
     return (
       <Box

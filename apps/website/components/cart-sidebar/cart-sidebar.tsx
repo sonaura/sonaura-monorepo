@@ -15,7 +15,7 @@ export const CartSidebar = ({ children }: PropsWithChildren) => {
   return (
     <SidebarProvider defaultOpen={false}>
       <SidebarInset className={'min-h-lvh'}>{children}</SidebarInset>
-      <Sidebar side={'right'}>
+      <Sidebar side={'right'} variant={'sidebar'}>
         <SidebarHeader>
           <CartHeader />
         </SidebarHeader>
