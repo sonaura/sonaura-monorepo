@@ -4,10 +4,10 @@
   "private": true,
   "dependencies": {
     "@openauthjs/openauth": "0.4.3",
-    "valibot": "1.0.0"
+    "valibot": "1.1.0"
   },
   "devDependencies": {
     "@types/node": "22.14.1",
-    "eslint": "9.25.1"
+    "eslint": "9.27.0"
   }
 }
