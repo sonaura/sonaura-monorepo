@@ -21,7 +21,7 @@ export async function DesktopMenu() {
   );
 
   return (
-    <NavigationMenu>
+    <NavigationMenu viewport={false}>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Catégories</NavigationMenuTrigger>
@@ -38,32 +38,24 @@ export async function DesktopMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/occasion" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Occasions
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+            <Link href="/occasion">Occasions</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/professionnels" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Professionnels
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+            <Link href="/professionnels">Professionnels</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/realisations" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Réalisations
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+            <Link href="/realisations">Réalisations</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/contact" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Contact
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+            <Link href="/contact">Contact</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
@@ -72,21 +64,25 @@ export async function DesktopMenu() {
 
 const ListItem = React.forwardRef<
   React.ElementRef<'a'>,
-  React.ComponentPropsWithoutRef<'a'>
->(({ className, title, children, ...props }, ref) => {
+  {
+    className?: string;
+    title: string;
+    href: string;
+  }
+>(({ className, title, href }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
           ref={ref}
+          href={href}
           className={cn(
             'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
             className,
           )}
-          {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );
