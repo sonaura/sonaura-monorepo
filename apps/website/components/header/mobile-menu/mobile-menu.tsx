@@ -4,10 +4,10 @@ import {
   SidebarHeader,
   SidebarProvider,
 } from '@sonaura/ui/components/sidebar';
-import Image from 'next/image';
 import { PropsWithChildren } from 'react';
 import { SidebarTrigger } from '@/components/sidebar-trigger';
 import { Menu } from 'lucide-react';
+import { LogoWithHeadline } from '@/components/logo-with-headline';
 
 export const MobileMenu = ({ children }: PropsWithChildren) => {
   return (
@@ -17,14 +17,7 @@ export const MobileMenu = ({ children }: PropsWithChildren) => {
       </SidebarTrigger>
       <Sidebar>
         <SidebarHeader>
-          <div className={'flex items-center justify-between p-2 gap-2'}>
-            <Image
-              src={'/assets/logos/logo.svg'}
-              alt={'Sonaura'}
-              width={180}
-              height={22}
-            />
-          </div>
+          <LogoWithHeadline containerClassName={'p-2 w-18'} />
         </SidebarHeader>
         <SidebarContent>{children}</SidebarContent>
       </Sidebar>
