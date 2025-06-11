@@ -1,5 +1,6 @@
 import { Instagram, Linkedin } from 'lucide-react';
 import Link from 'next/link';
+import { LogoWithHeadline } from '@/components/logo-with-headline';
 
 const Items = [
   {
@@ -17,13 +18,8 @@ export const Footer = () => {
 
   return (
     <footer className="flex flex-col justify-center items-center md:items-stretch gap-6 p-8 border-t mt-auto">
-      <div className="flex flex-col md:flex-row gap-4 items-center md:justify-between max-w-7xl m-auto md:w-full">
-        <img
-          src="/assets/logos/logo.svg"
-          alt="Sonaura"
-          width="130"
-          height="130"
-        />
+      <div className="flex flex-col md:flex-row gap-4 items-center md:justify-between md:items-start max-w-7xl m-auto md:w-full">
+        <LogoWithHeadline textClassName={'text-center md:text-start'} />
         <nav className="flex flex-col md:flex-row items-center text-sm gap-4">
           {Items.map(({ href, title }) => (
             <a key={title} href={href}>
