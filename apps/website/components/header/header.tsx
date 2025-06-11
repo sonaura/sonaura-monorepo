@@ -7,7 +7,7 @@ import { LogoWithHeadline } from '@/components/logo-with-headline';
 export const Header = async () => {
   return (
     <header className="w-full flex items-center justify-between p-2 sm:p-4 md:px-8 border-b sticky top-0 bg-background z-10 h-header">
-      <LogoWithHeadline imageProps={{ priority: true }} />
+      <LogoWithHeadline />
 
       <div className={'flex items-center gap-2'}>
         <div className={'hidden md:block'}>
