@@ -24,14 +24,8 @@ export default function LegalNoticePage() {
               R.C.S. Grenoble - SARL - 04 72 41 74 03
             </li>
             <li>
-              <strong>Créateur :</strong> BARRIERE Mathieu
-            </li>
-            <li>
               <strong>Responsable publication :</strong> M. VILIN Frank –
               frank@sonaura.fr
-            </li>
-            <li>
-              <strong>Webmaster :</strong> BARRIERE Mathieu – tech@barriere.me
             </li>
             <li>
               <strong>Hébergeur :</strong> Vercel Inc. - 340 S Lemon Ave #4133 -
