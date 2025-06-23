@@ -2,13 +2,6 @@
 
 The website is accessible at [sonaura.fr](https://sonaura.fr).
 
-It is showing new and pre-owned products for a Bang & Olufsen retailer in France.
-
-## TL;DR
-- Using Next.js App Router with React Server Components and server actions
-- Currently operating a transition to Cloudflare (Workers, R2) and Neon DB, and dropping Supabase and Vercel.
-- Dropping Material UI to use shadcn/ui and Tailwind.
-
 ## `/apps`
 - authentication (`@openauthjs`): self-hosted authentication
   - hosted on Cloudflare Workers
